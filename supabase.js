@@ -23,3 +23,4 @@ async function testSupabaseConnection() {
 }
 
 testSupabaseConnection();
+alert("Supabase connection test started");
