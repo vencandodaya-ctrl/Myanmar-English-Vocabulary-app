@@ -8,3 +8,18 @@ const supabaseClient = window.supabase.createClient(
 );
 
 console.log("Supabase client ready");
+async function testSupabaseConnection() {
+  const { data, error } = await supabaseClient
+    .from("dictionary")
+    .select("id,myanmar_word,english_word,phonetic,category")
+    .limit(5);
+
+  if (error) {
+    console.error("Supabase connection error:", error);
+    return;
+  }
+
+  console.log("Supabase connection successful:", data);
+}
+
+testSupabaseConnection();
