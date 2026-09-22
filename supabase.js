@@ -15,12 +15,11 @@ async function testSupabaseConnection() {
     .limit(5);
 
   if (error) {
-    console.error("Supabase connection error:", error);
+    alert("Supabase Error: " + error.message);
     return;
   }
 
-  console.log("Supabase connection successful:", data);
+  alert("Supabase Connected! Rows: " + data.length);
 }
-
 testSupabaseConnection();
 alert("Supabase connection test started");
