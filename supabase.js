@@ -21,4 +21,5 @@ async function testSupabaseConnection() {
 
   alert("Supabase Connected! Rows: " + data.length);
 }
+
 testSupabaseConnection();
