@@ -1,31 +1,31 @@
-const SUPABASE_URL = "https://tvjnzsyguiofvjyurwgc.supabase.co";  
-  
-const SUPABASE_KEY = "sb_publishable_6j-zhupXhZr0yHM_BQflHw_krb6By66";  
-  
-const supabaseClient = window.supabase.createClient(  
-  SUPABASE_URL,  
-  SUPABASE_KEY  
-);  
-  
-async function testSupabaseConnection() {  
-  const { data, error } = await supabaseClient  
-    .from("dictionary")  
-    .select("id,myanmar_word,english_word,phonetic,category")  
-    .limit(5);  
-  
-  if (error) {  
-    alert("Supabase Error:\n" + error.message);  
-    return;  
-  }  
-  
-  alert(  
-    "Supabase Connected! Rows: " +  
-    data.length +  
-    "\n\nFirst:\n" +  
-    data[0].myanmar_word +  
-    " → " +  
-    data[0].english_word  
-  );  
-}  
-  
-testSupabaseConnection();  
+const SUPABASE_URL = "https://tvjnzsyguiofvjyurwgc.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_6j-zhupXhZr0yHM_BQflHw_krb6By66";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+async function testSupabaseConnection() {
+  const { data, error } = await supabaseClient
+    .from("dictionary")
+    .select("id,myanmar_word,english_word,phonetic,category")
+    .limit(5);
+
+  if (error) {
+    alert("Supabase Error:\n" + error.message);
+    return;
+  }
+
+  alert(
+    "Supabase Connected! Rows: " +
+    data.length +
+    "\n\nFirst:\n" +
+    data[0].myanmar_word +
+    " → " +
+    data[0].english_word
+  );
+}
+
+testSupabaseConnection();
